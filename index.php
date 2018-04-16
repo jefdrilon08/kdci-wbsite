@@ -195,14 +195,13 @@ img.rightt {float: right;}
         	<div class="col_b float_l" style="width:395px;border-bottom:1px black dashed;margin-bottom: 5px" >
         	
         	<?php
-        	$strSql="Select * from tblstory";
+        	$strSql="Select * from tblstory order by story_id desc limit 1 ";
         	$res=$db->prepare($strSql);
         	$res->execute();
         	while($rows=$res->fetch(PDO::FETCH_ASSOC)){
-	        	$str.='<img src="administrator/images/stories/Jun Marcelo.jpg"  class=" image_frame_160 left "  style="margin-right:10px">';
+	        	$str.='<img src="administrator/images/stories/'.$rows['story_img'].'"  class=" image_frame_160 left "  style="margin-right:10px">';
 	        	$str.='<p style= "font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:100" ><b>'.$rows['story_title'].'</b></p>';
-	        	 
-	        	
+	        	       	
 	        	
 	        	
 	        	$str.=$loader->limit_words($rows['story_desc'],150).'<a href="partners.php?nId='.$rows['story_id'].'"><b style="color:#9dcf56"><i>&nbsp;More...</i></b></a>' ;

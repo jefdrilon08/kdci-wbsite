@@ -12,6 +12,8 @@
 			$this->user='root';
 			$this->pass='';
 			$this->database='dbkasaganaka';
+			
+			
 			/*$this->host='192.168.0.110';
 			$this->user='ariel';
 			$this->pass='';
